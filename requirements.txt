@@ -7,6 +7,6 @@ numpy
 quantstats
 requests
 vnstock
-pypfopt
+PyPortfolioOpt
 scikit-learn
 scipy
