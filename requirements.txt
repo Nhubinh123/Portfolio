@@ -10,3 +10,4 @@ vnstock
 PyPortfolioOpt
 scikit-learn
 scipy
+IPython
