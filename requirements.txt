@@ -1,0 +1,12 @@
+streamlit
+pandas
+plotly
+seaborn
+matplotlib
+numpy
+quantstats
+requests
+vnstock
+pypfopt
+scikit-learn
+scipy
