@@ -8,7 +8,6 @@ quantstats
 requests
 vnstock
 PyPortfolioOpt==1.5.6
-pypfopt
 scikit-learn
 scipy
 IPython
