@@ -1,0 +1,13 @@
+streamlit
+pandas
+plotly
+seaborn
+matplotlib
+numpy
+quantstats
+requests
+vnstock
+PyPortfolioOpt==1.5.6
+scikit-learn
+scipy
+IPython
