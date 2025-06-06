@@ -336,9 +336,9 @@ if menu == "🏠Dashboard - Tài chính doanh nghiệp":
         
 elif menu == "💼 Danh mục đầu tư":
     with st.sidebar:
-        portfolio_submenu = st.radio("Chọn mô hình", ["Mô hình Markowitz", "Mô hình Black-Litterman"], key="portfolio_submenu")
-    if portfolio_submenu == "Mô hình Markowitz":
-        st.header("Tối ưu danh mục đầu tư theo mô hình Markowitz")
+        portfolio_submenu = st.radio("Chọn mô hình", ["Mô hình", "Mô hình Black-Litterman"], key="portfolio_submenu")
+    if portfolio_submenu == "Mô hình":
+        st.header("Tối ưu danh mục đầu tư")
         # Bước 1: Chuẩn bị dữ liệu từ tất cả cổ phiếu trong data_stocks
         try:
             all_tickers = list(data_stocks.columns) 
@@ -600,14 +600,13 @@ elif menu == "💼 Danh mục đầu tư":
                         "Mã CP": ticker,
                         "Ngành": industry,
                         "Tỷ trọng danh mục cổ phiếu": f"{weight_percent:.2f}%",
-                        "Thay đổi tỷ trọng tối ưu": f"{weight_change:.2f}%",
                         "Giá CP": f"{current_price:,.0f}",
                         "Định giá (VND)": f"{estimated_price:,.0f}" })
-                html_columns = [ "STT", "Mã CP", "Ngành", "Tỷ trọng danh mục cổ phiếu", "Thay đổi tỷ trọng tối ưu", "Giá CP", "Định giá (VND)"]
+                html_columns = [ "STT", "Mã CP", "Ngành", "Tỷ trọng danh mục cổ phiếu", "Giá CP", "Định giá (VND)"]
                 table_df = pd.DataFrame(table_data, columns=html_columns)
                 column_widths = {
                     "STT": 50, "Mã CP": 80, "Ngành": 150, "Tỷ trọng danh mục cổ phiếu": 250,
-                    "Thay đổi tỷ trọng tối ưu": 220, "Giá CP": 110, "Định giá (VND)": 160, }
+                    "Giá CP": 110, "Định giá (VND)": 160, }
                 html = '<table class="custom-table"><thead><tr>'
                 for col in table_df.columns:
                     width = column_widths.get(col, 100)
