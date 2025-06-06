@@ -165,9 +165,9 @@ def fetch_stock_data(symbols1, start_date="01/01/2020", save_dir="."):
                 df["Ngay"] = pd.to_datetime(df["Ngay"], format="%d/%m/%Y", errors="coerce")
                 os.makedirs(save_dir, exist_ok=True)
                 df.to_csv(output_file, index=False, encoding="utf-8-sig")
-                df_close = df[["Ngay", "GiaDieuChinh"]].copy()
+                df_close = df[["Ngay", "GiaDongCua"]].copy()
                 df_close.set_index("Ngay", inplace=True)
-                dfs[symbol] = df_close.rename(columns={"GiaDieuChinh": symbol})
+                dfs[symbol] = df_close.rename(columns={"GiaDongCua": symbol})
             else:
                 errors.append(f"Không có dữ liệu giá cho {symbol}.")
         except requests.exceptions.RequestException as e:
